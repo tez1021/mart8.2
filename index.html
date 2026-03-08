@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M8 - Мартын 8-ны мэнд</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom animation for floating effect */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        /* Hover effect for clickables */
+        .clickable-box {
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        .clickable-box:hover {
+            transform: scale(1.02);
+            background-color: #fce7f3; /* pink-100 */
+        }
+        .clickable-box:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-pink-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <span class="text-3xl font-bold tracking-widest">M8</span>
+            <span class="text-sm hidden sm:block">Мартын 8-ны олон улсын баяр</span>
+            <!-- Volume Control Button -->
+            <button id="muteBtn" class="text-2xl focus:outline-none" title="Дууг унтраа/асаа">
+                🔇
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Эхлэл хэсэг) -->
+    <header class="bg-gradient-to-b from-pink-400 to-pink-100 min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 relative overflow-hidden">
+        
+        <!-- Decorative circles -->
+        <div class="absolute top-10 left-10 w-20 h-20 bg-pink-300 rounded-full opacity-50 float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-200 rounded-full opacity-50 float-animation" style="animation-delay: 1s;"></div>
+        
+        <div class="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-3xl border-4 border-pink-200 z-10">
+            <h1 class="text-3xl md:text-5xl font-bold text-pink-700 mb-6 leading-tight">
+                Мартын 8-ны мэнд хүргэсэн
+            </h1>
+            
+            <!-- Сэтгэлийн үг (Clickable) -->
+            <div id="greetingBox" class="bg-pink-50 p-6 rounded-xl border border-pink-100 mt-4 clickable-box shadow-sm" onclick="playGreetingSound()">
+                <p class="text-xl md:text-2xl text-pink-900 leading-relaxed font-medium">
+                    "Ээж эгч дүү гуравтаа гэр бүлийн минь гэрэл гэгээ болсон та нартаа баярын мэнд хүргэе"
+                </p>
+                <p class="text-xs text-pink-400 mt-2 italic"></p>
+            </div>
+            
+            <div class="mt-8 text-6xl float-animation">
+                💐
+            </div>
+        </div>
+    </header>
+
+    <!-- Poems Section (Шүлгийн зориулалт) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-pink-600 border-b-4 border-pink-200 inline-block pb-2">
+                    Шүлэг
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Ээждээ зориулсан шүлэг -->
+                <div class="bg-pink-50 p-8 rounded-2xl shadow-lg border-t-8 border-pink-500 hover:scale-105 transition-transform duration-300 flex flex-col">
+                    <div class="text-center mb-6">
+                        <span class="text-5xl">👩‍👧‍👦</span>
+                        <h3 class="text-2xl font-bold text-pink-700 mt-4">Ээждээ</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl flex-grow shadow-inner text-center italic text-gray-700 leading-relaxed space-y-2">
+                        <p>Үгээрээ залуурдаж үйлээрээ хөтөлсөн</p>
+                        <p>Үггүй ойлгуулж харцаараа ухааруулсан</p>
+                        <p>Сүүгээрээ тэжээж чадлаараа өсгөсөн</p>
+                        <p>Совингоороо мэдэрч ерөөлөөрөө хамгаалсан</p>
+                        <p>Ийм ээжтэй байх мөн ч сайхан даа</p>
+                        <p>Зүрхээрээ шаналж зөвлөж дэмжсэн</p>
+                        <p>Зүүдээрээ манаж зааж сургасан</p>
+                        <p>Урмаар тэтгэж бурмаар шагнасан</p>
+                        <p>Ухаанаар ялж итгэлээр зоригжуулсан</p>
+                        <p>Ийм ээжтэй байх мөн ч сайхан даа.</p>
+                        <p>Нулимсаараа зэмлэж инээдээрээ баярлуулсан</p>
+                        <p>Насаараа зовж араас минь санааширсан</p>
+                        <p>Бүдрэхэд минь түшиж бухимдахад минь аргадсан</p>
+                        <p>Буян хурааж бусдын төлөө насаа нэмсэн</p>
+                        <p>Ийм ээжтэй байх мөн ч сайхан даа.</p>
+                        <p class="mt-4 font-semibold not-italic text-pink-600">Би ээждээ маш их хайртай!</p>
+                    </div>
+                </div>
+
+                <!-- Эгчдээ зориулсан шүлэг -->
+                <div class="bg-pink-50 p-8 rounded-2xl shadow-lg border-t-8 border-pink-400 hover:scale-105 transition-transform duration-300 flex flex-col">
+                    <div class="text-center mb-6">
+                        <span class="text-5xl">👭</span>
+                        <h3 class="text-2xl font-bold text-pink-700 mt-4">Эгчдээ</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl flex-grow shadow-inner text-center italic text-gray-700 leading-relaxed space-y-2">
+                        <p>Эгч дүүгийн дундах сахиус шиг,</p>
+                        <p>Аав ээжийн итгэл түшэг болсон.</p>
+                        <p>Намайг өсөхөд гараас минь барин,</p>
+                        <p>Нааш цаашыг зааж сургасан.</p>
+                        <p>Эгч минь надад хамгийн дотно,</p>
+                        <p>Эелдэг зөөлөн сайхан хүн.</p>
+                        <p>Хэцүү үед түшиг болж,</p>
+                        <p>Хэзээд надад урам өгнө.</p>
+                        <p>Инээмсэглэл нь дулаахан,</p>
+                        <p>Итгэл найдвар бэлэглэнэ.</p>
+                        <p>Эгчтэйгээ хамт байхдаа</p>
+                        <p>Илүү аз жаргалтай байдаг.</p>
+                        <p class="mt-4 font-semibold not-italic text-pink-600">Эгч минь, баярын мэндийг хүргэе!</p>
+                    </div>
+                </div>
+
+                <!-- Дүүдээ зориулсан шүлэг -->
+                <div class="bg-pink-50 p-8 rounded-2xl shadow-lg border-t-8 border-pink-300 hover:scale-105 transition-transform duration-300 flex flex-col">
+                    <div class="text-center mb-6">
+                        <span class="text-5xl">👧</span>
+                        <h3 class="text-2xl font-bold text-pink-700 mt-4">Дүүдээ</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl flex-grow shadow-inner text-center italic text-gray-700 leading-relaxed space-y-2">
+                        <p>Цайлган царай, цоглог инээмсэглэл,</p>
+                        <p>Цаглашгүй хөөртэй миний дүү.</p>
+                        <p>Ирээдүйдээ итгэлтэй хөл тавьж,</p>
+                        <p>Ирмүүн сайхан зорилготой яваарай.</p>
+                        <p class="mt-4 font-semibold not-italic text-pink-600">Дүү минь, аз жаргал хэвээрээ байг!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section (Гол хэсэг - Түүх) -->
+    <main class="container mx-auto px-4 py-16">
+        
+        <!-- History Section (Changed layout) -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-pink-600 border-b-4 border-pink-200 inline-block pb-2">
+                    Мартын 8-ны түүх
+                </h2>
+            </div>
+            
+            <!-- Box-style removed, full-width readable text layout -->
+            <div class="max-w-4xl mx-auto">
+                <div class="text-lg text-gray-700 leading-relaxed space-y-6">
+                    
+                    <!-- Image placed at the top center -->
+                    <div class="flex justify-center mb-10">
+                        <img src="https://placehold.co/600x400/ffc0cb/ffffff?text=Women+History" alt="Мартын 8-ны түүх" class="rounded-xl shadow-md w-full max-w-xl object-cover">
+                    </div>
+
+                    <p>
+                        Мартын 8-ны олон улсын эмэгтэйчүүдийн өдөр нь дэлхий даяар эмэгтэйчүүдийн эрх тэгш байдлыг хамгаалах, тэдний амжилт, нийгэм-улс төрийн оролцоог дэмжих зорилготой тэмдэглэдэг өдөр юм. Энэ өдөр нь зөвхөн баяр хөөр биш, харин эмэгтэйчүүдийн эрхийн төлөөх тэмцлийн бэлгэдэл болдог.
+                    </p>
+
+                    <p>
+                        <strong>Үүсэл үндэс:</strong> Тус баярын эх үндэс нь 20-р зууны эхэн үеийн АНУ-ын эмэгтэйчүүдийн эрхийн төлөөх тэмцэлтэй холбоотой. 1908 онд Нью-Йорк хотод оёдлын үйлдвэрийн 15,000 гаруй эмэгтэйчүүд цагийн багасгалт, цалинг нэмэгдүүлэх, санал өгөх эрхийн төлөө жагссан байна. Энэхүү түүхэн жагсаал нь дараагийн жилүүдэд өргөжин тэлж, "Эмэгтэйчүүдийн өдөр" гэсэн нэр томъёог анх АНУ-ын Социалист намаас 1909 онд тунхаглаж байв.
+                    </p>
+
+                    <p>
+                        <strong>Олон улсын хэмжээнд:</strong> 1910 онд Данийн нийслэл Копенгаген хотод болсон Эмэгтэйчүүдийн II интернационалын хурал дээр Германы социалист Клара Цеткины санал нэгтэйгээр "Олон улсын эмэгтэйчүүдийн өдөр"-ийг жил бүр тэмдэглэхээр шийдвэрлэжээ. Ингэснээр энэхүү баяр дэлхий нийтийн анхаарлыг татах эхлэл нь тавигдсан юм.
+                    </p>
+
+                    <p>
+                        <strong>Орост болсон өөрчлөлт:</strong> 1917 оны 3 сарын 8-нд (Григорийн тооллоор) Оросын эмэгтэйчүүд Дэлхийн нэгдүгээр дайныг зогсоох, талх олж авах эрхийн төлөө "Энх тайван, талх" уриатайгаар жагсаал зохион байгуулжээ. Энэхүү жагсаал нь хаант засаглалыг унагахад чухал нөлөө үзүүлсэн бөгөөд хожим нь Зөвлөлт холбоот улсад албан ёсны баяр болсон түүхтэй.
+                    </p>
+
+                    <p>
+                        <strong>Өнөөгийн байдал:</strong> 1975 онд НҮБ-ын ерөнхий ассемблейн шийдвэрээр Мартын 8-ны өдрийг албан ёсоор баталгаажуулж, дэлхий дахинаа тэмдэглэх болсон. Өнөө үед энэ өдөр нь зөвхөн эмэгтэйчүүдийн амжилтыг тэмдэглэхээс гадна тэдний эсрэг хүчирхийлэл, ялгаварлан гадлах үзлийг эсэргүүцэх өдөр ч болж үргэлжилж байна.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- End Section (Өрмийн үг) -->
+    <footer class="bg-pink-600 text-white py-16 px-4">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Баярын мэнд!</h2>
+            <p class="text-xl mb-4 font-light">
+                Дэлхийн бүх хатан ээжүүд, эгч дүүсдээ аз жаргал, эрүүл энхийг хүсье.
+            </p>
+            <p class="text-lg opacity-90 mb-8">
+                Та бүхний амьдралд баяр баясгалан дүүрэн, мартагдашгүй өдөр болог!
+            </p>
+            <div class="text-4xl space-x-2">
+                🎉 ✨ 💖 ✨ 🎉
+            </div>
+        </div>
+        <div class="text-center mt-12 text-pink-200 text-sm">
+            <p>хүү Тэнхлүүнээс нь </p>
+        </div>
+    </footer>
+
+    <!-- Audio Elements -->
+    <!-- Эдгээр файлуудыг өөрийн компьютертээ html файлтайгаа нэг фолдерт тавина уу -->
+    <!-- 1. calm-music.mp3 - Намуухан аялгуу -->
+    <!-- 2. greeting-sound.mp3 - Товч дарахад гарах дуу -->
+    
+    <audio id="bgMusic" loop>
+        <source src="calm-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <audio id="greetingSound">
+        <source src="greeting-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // --- Config ---
+        const initialVolume = 0.3; 
+
+        const bgMusic = document.getElementById('bgMusic');
+        const greetingSound = document.getElementById('greetingSound');
+        const muteBtn = document.getElementById('muteBtn');
+        
+        bgMusic.volume = initialVolume;
+        let isMuted = true;
+
+        window.addEventListener('load', () => {
+            bgMusic.play().then(() => {
+                isMuted = false;
+                muteBtn.innerText = '🔊';
+            }).catch(() => {
+                console.log("Auto-play prevented.");
+                muteBtn.innerText = '🔇';
+            });
+        });
+
+        muteBtn.addEventListener('click', () => {
+            if (isMuted) {
+                bgMusic.play();
+                muteBtn.innerText = '🔊';
+                isMuted = false;
+            } else {
+                bgMusic.pause();
+                muteBtn.innerText = '🔇';
+                isMuted = true;
+            }
+        });
+
+        function playGreetingSound() {
+            if (!isMuted) {
+                bgMusic.volume = 0.1;
+                setTimeout(() => {
+                    bgMusic.volume = initialVolume;
+                }, 2000);
+            }
+            
+            greetingSound.currentTime = 0;
+            greetingSound.play();
+        }
+    </script>
+
+</body>
+</html>
